@@ -607,53 +607,311 @@ h3 {
    ABOUT
    ========================================================= */
 
-.section-placeholder {
+.about-sections {
   position: relative;
 
   width: 100%;
 
-  height:
-    clamp(180px, 22vw, 320px);
-
-  margin-top:
-    clamp(3rem, 7vw, 6rem);
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  overflow: hidden;
-
-  border:
+  border-top:
     1px solid var(--color-border);
-
-  color: var(--color-text-soft);
-
-  font-size: 0.78rem;
-
-  font-weight: 600;
-
-  letter-spacing: 0.12em;
-
-  text-transform: uppercase;
 }
 
-.section-placeholder::after {
+
+/* =========================================================
+   ABOUT BLOCK
+   ========================================================= */
+
+.about-block {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 0.7fr)
+    minmax(0, 1.5fr);
+
+  gap:
+    clamp(2rem, 6vw, 6rem);
+
+  padding:
+    clamp(3rem, 6vw, 5.5rem) 0;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+
+  /*
+    INITIAL HIDDEN STATE
+  */
+
+  opacity: 0;
+
+  transform:
+    translateY(55px);
+
+  /*
+    Soft blur makes it feel like the section
+    is emerging rather than simply appearing.
+  */
+  filter:
+    blur(4px);
+
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+/*
+  Once IntersectionObserver adds this class,
+  the section animates into place.
+*/
+.about-block--visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  filter:
+    blur(0);
+}
+
+
+/* =========================================================
+   YELLOW REVEAL LINE
+   ========================================================= */
+
+.about-block::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background:
+    var(--color-yellow);
+
+  transition:
+    width 750ms cubic-bezier(0.2, 0.7, 0.2, 1)
+      200ms;
+}
+
+
+/*
+  The yellow line appears after the block starts
+  fading in.
+*/
+.about-block--visible::before {
+  width: 80px;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.about-block__heading {
+  align-self: start;
+}
+
+
+.about-block__number {
+  display: block;
+
+  margin-bottom: 1.4rem;
+
+  color: var(--color-yellow);
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+
+.about-block__heading h3 {
+  margin: 0;
+
+  color:
+    var(--color-blue-deep);
+
+  font-size:
+    clamp(1.8rem, 2.6vw, 3rem);
+
+  font-weight: 570;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.about-block__content {
+  max-width: 660px;
+}
+
+
+.about-block__content p {
+  margin:
+    0 0 1.5rem;
+
+  color:
+    var(--color-text-soft);
+
+  font-size:
+    clamp(1rem, 1.15vw, 1.15rem);
+
+  line-height: 1.8;
+}
+
+
+.about-block__content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SUBTLE BOTTOM FADE
+   ========================================================= */
+
+/*
+  Adds a very subtle fade toward the bottom of each block.
+
+  It is deliberately weak so it doesn't obscure text.
+*/
+.about-block::after {
   content: "";
 
   position: absolute;
 
   left: 0;
+  right: 0;
   bottom: 0;
 
-  width:
-    clamp(80px, 12vw, 180px);
+  height: 50px;
 
-  height: 6px;
+  pointer-events: none;
 
-  background: var(--color-yellow);
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(247, 247, 242, 0),
+      rgba(247, 247, 242, 0.55)
+    );
+
+  transition:
+    opacity 600ms ease;
+}
+
+
+.about-block--visible::after {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .about-block {
+    grid-template-columns:
+      1fr;
+
+    gap: 2rem;
+
+    padding:
+      3rem 0;
+
+    /*
+      Slightly smaller movement on phones.
+    */
+    transform:
+      translateY(35px);
+  }
+
+
+  .about-block--visible {
+    transform:
+      translateY(0);
+  }
+
+
+  .about-block__number {
+    margin-bottom:
+      1rem;
+  }
+
+
+  .about-block__heading h3 {
+    font-size:
+      clamp(2rem, 10vw, 3rem);
+  }
+
+
+  .about-block__content {
+    max-width:
+      none;
+  }
+
+
+  .about-block__content p {
+    font-size:
+      1rem;
+
+    line-height:
+      1.75;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-block {
+    opacity: 1;
+
+    transform:
+      none;
+
+    filter:
+      none;
+
+    transition:
+      none;
+  }
+
+
+  .about-block::before {
+    width: 80px;
+
+    transition:
+      none;
+  }
+
+
+  .about-block::after {
+    opacity: 1;
+
+    transition:
+      none;
+  }
 }
 
 
