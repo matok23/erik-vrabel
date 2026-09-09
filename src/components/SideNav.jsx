@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 const navigationItems = [
     {
         id: 'about',
-        label: 'About',
+        label: 'O mne',
     },
     {
         id: 'priorities',
-        label: 'Priorities',
+        label: 'Hodnoty',
     },
     {
         id: 'program',
@@ -15,12 +15,14 @@ const navigationItems = [
     },
     {
         id: 'contact',
-        label: 'Contact',
+        label: 'KontaKt',
     },
 ];
 
 function SideNav({ visible, activeSection }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const isOnDarkSection = activeSection === 'contact';
 
     useEffect(() => {
         if (!visible) {
@@ -60,7 +62,13 @@ function SideNav({ visible, activeSection }) {
     return (
         <>
             <nav
-                className={`side-nav ${visible ? 'side-nav--visible' : ''}`}
+                className={[
+                    'side-nav',
+                    visible ? 'side-nav--visible' : '',
+                    isOnDarkSection ? 'side-nav--dark' : '',
+                ]
+                    .filter(Boolean)
+                    .join(' ')}
                 aria-label="Main navigation"
             >
                 <ul className="side-nav__list">

@@ -41,7 +41,7 @@ function Contact() {
                         })
                     }
                 >
-                    Back to top ↑
+                    Návrat na vrchol ↑
                 </button>
             </footer>
         </Section>

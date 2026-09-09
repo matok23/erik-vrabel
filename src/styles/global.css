@@ -1022,6 +1022,45 @@ h3 {
 
 
 /* =========================================================
+   SIDE NAV ON DARK SECTION
+   ========================================================= */
+
+.side-nav--dark
+.side-nav__link {
+  color:
+    rgba(255, 255, 255, 0.6);
+}
+
+.side-nav--dark
+.side-nav__link:hover {
+  color:
+    #ffffff;
+}
+
+.side-nav--dark
+.side-nav__link--active {
+  color:
+    #ffffff;
+}
+
+.side-nav--dark
+.side-nav__link--active
+.side-nav__dot {
+  background:
+    var(--color-yellow);
+
+  border-color:
+    var(--color-yellow);
+}
+
+.side-nav--dark
+.side-nav__dot {
+  border-color:
+    rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
    MOBILE NAVIGATION
    ========================================================= */
 

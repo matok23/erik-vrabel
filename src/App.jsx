@@ -8,12 +8,14 @@ import Priorities from './sections/Priorities.jsx';
 import Program from './sections/Program.jsx';
 import Contact from './sections/Contact.jsx';
 
+
 const sectionIds = [
   'about',
   'priorities',
   'program',
   'contact',
 ];
+
 
 function App() {
   const [navigationVisible, setNavigationVisible] =
@@ -22,78 +24,200 @@ function App() {
   const [activeSection, setActiveSection] =
     useState('about');
 
+
   useEffect(() => {
-    const hero = document.getElementById('hero');
+    let ticking = false;
 
-    if (!hero) {
-      return undefined;
-    }
 
-    const heroObserver = new IntersectionObserver(
-      ([entry]) => {
+    const updatePageState = () => {
+      /*
+        --------------------------------------------------
+        NAVIGATION VISIBILITY
+        --------------------------------------------------
+
+        The menu appears once we have scrolled roughly
+        35% through the hero.
+
+        hero bottom <= 65% of viewport
+      */
+
+      const hero = document.getElementById('hero');
+
+      if (hero) {
+        const heroRect =
+          hero.getBoundingClientRect();
+
+        const navigationTrigger =
+          window.innerHeight * 0.65;
+
         setNavigationVisible(
-          entry.intersectionRatio < 0.35,
+          heroRect.bottom <= navigationTrigger,
         );
-      },
-      {
-        threshold: [0, 0.35, 1],
-      },
-    );
+      }
 
-    heroObserver.observe(hero);
 
-    return () => {
-      heroObserver.disconnect();
-    };
-  }, []);
+      /*
+        --------------------------------------------------
+        ACTIVE SECTION
+        --------------------------------------------------
 
-  useEffect(() => {
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
+        We use the exact vertical center of the viewport.
 
-    if (sections.length === 0) {
-      return undefined;
-    }
+        Whichever section contains this point becomes
+        active.
 
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort(
-            (a, b) =>
-              b.intersectionRatio -
-              a.intersectionRatio,
-          );
+        This is much more reliable for full-screen
+        sections than IntersectionObserver thresholds.
+      */
 
-        if (visibleEntries.length > 0) {
-          setActiveSection(
-            visibleEntries[0].target.id,
-          );
+      const triggerPoint =
+        window.innerHeight * 0.5;
+
+
+      let currentSection = null;
+
+
+      for (const id of sectionIds) {
+        const section =
+          document.getElementById(id);
+
+        if (!section) {
+          continue;
         }
-      },
+
+
+        const rect =
+          section.getBoundingClientRect();
+
+
+        if (
+          rect.top <= triggerPoint &&
+          rect.bottom > triggerPoint
+        ) {
+          currentSection = id;
+
+          break;
+        }
+      }
+
+
+      /*
+        Fallback.
+
+        Normally one section will always contain the
+        center point, but this protects against gaps or
+        unusually sized sections.
+      */
+
+      if (!currentSection) {
+        let closestDistance = Infinity;
+        let closestSection = 'about';
+
+
+        for (const id of sectionIds) {
+          const section =
+            document.getElementById(id);
+
+          if (!section) {
+            continue;
+          }
+
+
+          const rect =
+            section.getBoundingClientRect();
+
+
+          const sectionCenter =
+            rect.top + rect.height / 2;
+
+
+          const distance =
+            Math.abs(
+              sectionCenter - triggerPoint,
+            );
+
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSection = id;
+          }
+        }
+
+
+        currentSection =
+          closestSection;
+      }
+
+
+      setActiveSection(currentSection);
+
+      ticking = false;
+    };
+
+
+    /*
+      requestAnimationFrame prevents the scroll handler
+      from performing all calculations on every raw
+      browser scroll event.
+    */
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(
+          updatePageState,
+        );
+
+        ticking = true;
+      }
+    };
+
+
+    const handleResize = () => {
+      updatePageState();
+    };
+
+
+    /*
+      Calculate correct state immediately on load.
+
+      Important if the page loads at an anchor such as:
+
+      /#program
+
+      or the browser restores a previous scroll position.
+    */
+
+    updatePageState();
+
+
+    window.addEventListener(
+      'scroll',
+      handleScroll,
       {
-        root: null,
-        rootMargin: '-25% 0px -45% 0px',
-        threshold: [
-          0,
-          0.1,
-          0.25,
-          0.5,
-          0.75,
-          1,
-        ],
+        passive: true,
       },
     );
 
-    sections.forEach((section) => {
-      sectionObserver.observe(section);
-    });
+
+    window.addEventListener(
+      'resize',
+      handleResize,
+    );
+
 
     return () => {
-      sectionObserver.disconnect();
+      window.removeEventListener(
+        'scroll',
+        handleScroll,
+      );
+
+      window.removeEventListener(
+        'resize',
+        handleResize,
+      );
     };
   }, []);
+
 
   return (
     <>
@@ -101,23 +225,30 @@ function App() {
         href="#about"
         className="skip-link"
       >
-        Skip to content
+        Prejsť na obsah
       </a>
+
 
       <SideNav
         visible={navigationVisible}
         activeSection={activeSection}
       />
 
+
       <main>
         <Hero />
+
         <About />
+
         <Priorities />
+
         <Program />
+
         <Contact />
       </main>
     </>
   );
 }
+
 
 export default App;

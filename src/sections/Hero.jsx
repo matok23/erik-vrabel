@@ -31,7 +31,7 @@ function Hero() {
             <div className="hero__content">
                 <div className="hero__text">
                     <p className="hero__eyebrow">
-                        Kandidát na starostu
+                        Nezávislý kandidát na starostu
                     </p>
 
                     <h1
@@ -43,7 +43,7 @@ function Hero() {
                     </h1>
 
                     <p className="hero__description">
-                        Nezávislý kandidát na starostu obce Vištuk
+                        "Zodpovednosť, skúsenosti a kontinuita - istota pre budúcnosť Vištuka"
                     </p>
                 </div>
             </div>
