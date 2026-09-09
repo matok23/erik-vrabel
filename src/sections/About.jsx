@@ -4,8 +4,8 @@ function About() {
     return (
         <Section
             id="about"
-            eyebrow="01 / About"
-            title="About the candidate"
+            eyebrow="01"
+            title="Niečo o mne"
         >
             <div className="intro-copy">
                 <p className="lead">

@@ -4,7 +4,7 @@ function Program() {
     return (
         <Section
             id="program"
-            eyebrow="03 / Program"
+            eyebrow="03"
             title="Program"
         >
             <div className="intro-copy">

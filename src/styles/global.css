@@ -72,6 +72,9 @@ html {
   scroll-snap-type: y proximity;
 
   background: var(--color-background);
+
+  /* Firefox */
+  scrollbar-width: none;
 }
 
 body {
@@ -87,6 +90,16 @@ body {
   color: var(--color-text);
 
   line-height: 1.5;
+
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body,
@@ -367,6 +380,8 @@ h3 {
   display: block;
 
   color: var(--color-blue);
+
+  margin-top: 15px;
 }
 
 .hero__description {
@@ -784,47 +799,229 @@ h3 {
   background: var(--color-yellow);
 }
 
+
 .contact-layout {
   display: grid;
 
   grid-template-columns:
-    1fr 0.7fr;
+    minmax(0, 1fr)
+    minmax(300px, 0.8fr);
 
   gap:
-    clamp(3rem, 8vw, 8rem);
+    clamp(4rem, 8vw, 8rem);
+
+  align-items: start;
 }
 
-.contact-placeholder {
-  position: relative;
 
-  min-height: 240px;
+/* =========================================================
+   CONTACT INFO
+   ========================================================= */
 
+.contact-info {
+  max-width: 620px;
+}
+
+
+.contact-info .lead {
+  margin-bottom: 3rem;
+
+  color: var(--color-dark-text);
+
+  font-size:
+    clamp(1.8rem, 2.5vw, 2.8rem);
+
+  font-weight: 450;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+}
+
+
+.contact-list {
   display: flex;
+
+  flex-direction: column;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.contact-item {
+  display: grid;
+
+  grid-template-columns:
+    110px 1fr;
+
+  gap: 1.5rem;
 
   align-items: center;
 
-  justify-content: center;
+  padding:
+    1.5rem 0;
 
-  overflow: hidden;
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.18);
+}
 
-  border:
-    1px solid rgba(255, 255, 255, 0.2);
 
-  color: var(--color-dark-soft);
+.contact-item__label {
+  color: var(--color-yellow);
 
-  font-size: 0.75rem;
+  font-size: 0.72rem;
 
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: 0.12em;
 
   text-transform: uppercase;
 }
 
-.contact-placeholder::after {
+
+.contact-item__value {
+  width: fit-content;
+
+  color: var(--color-dark-text);
+
+  font-size:
+    clamp(1rem, 1.3vw, 1.25rem);
+
+  font-weight: 450;
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+
+.contact-item__value:hover {
+  color: var(--color-yellow);
+
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   PDF FLYER
+   ========================================================= */
+
+.flyer-preview {
+  width: 100%;
+}
+
+
+.flyer-preview__header {
+  margin-bottom: 1rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  color: var(--color-dark-soft);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+.flyer-preview__open {
+  color: var(--color-yellow);
+}
+
+
+.flyer-preview__document {
+  position: relative;
+
+  width: 100%;
+
+  /*
+    A4 paper ratio:
+    210 / 297 ≈ 0.707
+  */
+  aspect-ratio: 210 / 297;
+
+  overflow: hidden;
+
+  background: white;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.2);
+
+  cursor: pointer;
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+.flyer-preview__document:hover {
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.28);
+}
+
+
+.flyer-preview__iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  /*
+    Important.
+
+    The iframe only displays the PDF.
+    The invisible link above it handles clicks.
+  */
+  pointer-events: none;
+}
+
+
+.flyer-preview__link {
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 0;
+
+  display: block;
+}
+
+
+/*
+  Yellow accent that appears when hovering
+  over the document.
+*/
+.flyer-preview__document::after {
   content: "";
 
   position: absolute;
+
+  z-index: 1;
 
   left: 0;
   bottom: 0;
@@ -833,7 +1030,29 @@ h3 {
   height: 6px;
 
   background: var(--color-yellow);
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left center;
+
+  transition:
+    transform var(--transition-normal);
+
+  pointer-events: none;
 }
+
+
+.flyer-preview__document:hover::after {
+  transform:
+    scaleX(1);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .site-footer {
   margin-top:
@@ -857,9 +1076,11 @@ h3 {
   font-size: 0.86rem;
 }
 
+
 .site-footer p {
   margin: 0;
 }
+
 
 .site-footer button {
   padding: 0;
@@ -878,8 +1099,49 @@ h3 {
     color var(--transition-fast);
 }
 
+
 .site-footer button:hover {
   color: white;
+}
+
+
+/* =========================================================
+   CONTACT MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+
+    gap: 5rem;
+  }
+
+
+  .contact-item {
+    grid-template-columns: 1fr;
+
+    gap: 0.5rem;
+
+    padding:
+      1.3rem 0;
+  }
+
+
+  .flyer-preview {
+    width: min(100%, 430px);
+
+    margin-inline: auto;
+  }
+
+
+  .site-footer {
+    margin-top: 6rem;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
 }
 
 

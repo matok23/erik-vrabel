@@ -4,8 +4,8 @@ function Priorities() {
     return (
         <Section
             id="priorities"
-            eyebrow="02 / Priorities"
-            title="Key priorities"
+            eyebrow="02"
+            title="Moje hodnoty"
             className="page-section--alternate"
         >
             <div className="intro-copy">

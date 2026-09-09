@@ -4,27 +4,93 @@ function Contact() {
     return (
         <Section
             id="contact"
-            eyebrow="04 / Contact"
-            title="Contact"
+            eyebrow="04"
+            title="Kontakt"
             className="page-section--dark"
         >
             <div className="contact-layout">
-                <div className="intro-copy">
+                <div className="contact-info">
                     <p className="lead">
-                        Contact information and official campaign channels
-                        will appear here.
+                        Neváhajte a kontaktujte ma, rád zodpoviem Vaše otázky
                     </p>
 
-                    <p>
-                        We can later add email, social links, campaign office
-                        information, required legal disclosures, and other
-                        relevant details.
-                    </p>
+                    <div className="contact-list">
+
+                        <div className="contact-item">
+                            <span className="contact-item__label">
+                                Email
+                            </span>
+
+                            <a
+                                href="mailto:silnyvistuk@erikvrabel.sk"
+                                className="contact-item__value"
+                            >
+                                silnyvistuk@erikvrabel.sk
+                            </a>
+                        </div>
+
+
+                        <div className="contact-item">
+                            <span className="contact-item__label">
+                                Tel
+                            </span>
+
+                            <a
+                                href="tel:+421905012149"
+                                className="contact-item__value"
+                            >
+                                +421 905 012 149
+                            </a>
+                        </div>
+
+
+                        <div className="contact-item">
+                            <span className="contact-item__label">
+                                Web
+                            </span>
+
+                            <a
+                                href="https://example.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-item__value"
+                            >
+                                neviem este
+                            </a>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div className="contact-placeholder">
-                    <span>Contact information</span>
+
+                <div className="flyer-preview">
+                    <div className="flyer-preview__header">
+                        <span>Volebný leták</span>
+
+                        <span className="flyer-preview__open">
+                            Prezerať leták ↗
+                        </span>
+                    </div>
+
+                    <div className="flyer-preview__document">
+
+                        <iframe
+                            src="/letak.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                            title="Campaign flyer preview"
+                            className="flyer-preview__iframe"
+                        />
+
+                        <a
+                            href="/letak.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flyer-preview__link"
+                            aria-label="Open campaign flyer PDF in a new tab"
+                        />
+
+                    </div>
                 </div>
+
             </div>
 
             <footer className="site-footer">
