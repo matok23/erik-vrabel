@@ -69,7 +69,7 @@ html {
   padding: 0;
 
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
 
   background: var(--color-background);
 
@@ -194,7 +194,7 @@ h3 {
 
   background: var(--color-background);
 
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 
@@ -477,7 +477,7 @@ h3 {
 
   background: var(--color-background);
 
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 .page-section--alternate {
