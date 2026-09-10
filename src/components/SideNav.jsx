@@ -15,7 +15,7 @@ const navigationItems = [
     },
     {
         id: 'contact',
-        label: 'KontaKt',
+        label: 'Kontakt',
     },
 ];
 
@@ -109,7 +109,7 @@ function SideNav({ visible, activeSection }) {
                         className="mobile-nav__brand"
                         onClick={() => handleNavigation('about')}
                     >
-                        Candidate Name
+                        Ing. Erik Vrábel
                     </button>
 
                     <button
@@ -125,8 +125,8 @@ function SideNav({ visible, activeSection }) {
                         aria-controls="mobile-menu"
                         aria-label={
                             mobileMenuOpen
-                                ? 'Close navigation'
-                                : 'Open navigation'
+                                ? 'Zavrieť obsah'
+                                : 'Otvoriť obsah'
                         }
                     >
                         <span />
@@ -140,7 +140,7 @@ function SideNav({ visible, activeSection }) {
                         ? 'mobile-nav__menu--open'
                         : ''
                         }`}
-                    aria-label="Mobile navigation"
+                    aria-label="Obsah"
                 >
                     <ul>
                         {navigationItems.map((item) => {
