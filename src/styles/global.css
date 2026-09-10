@@ -2067,37 +2067,10 @@ h3 {
   }
 
 
-  /* -------------------------------------------------------
-     PRIORITIES
-     ------------------------------------------------------- */
 
-  .placeholder-grid {
-    grid-template-columns: 1fr;
-  }
+}
 
-
-  .placeholder-item {
-    min-height: auto;
-
-    padding:
-      2rem 0;
-
-    border-right: 0;
-
-    border-bottom:
-      1px solid var(--color-border);
-  }
-
-
-  .placeholder-item:last-child {
-    border-bottom: 0;
-  }
-
-
-  .placeholder-item__number {
-    margin-bottom: 2rem;
-  }
-
+@media (max-width: 700px) {
 
   /* -------------------------------------------------------
      CONTACT
@@ -2286,5 +2259,258 @@ h3 {
 
   .hero__scroll-line {
     height: 30px;
+  }
+}
+
+/* =========================================================
+   VALUES / PRIORITIES
+   ========================================================= */
+
+.values-list {
+  width: 100%;
+
+  border-top:
+    1px solid var(--color-border);
+}
+
+
+/* =========================================================
+   INDIVIDUAL VALUE
+   ========================================================= */
+
+.value-row {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 0.8fr)
+    minmax(0, 1.4fr);
+
+  gap:
+    clamp(2rem, 6vw, 6rem);
+
+  align-items: center;
+
+  padding:
+    clamp(3rem, 5vw, 5rem) 0;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  /*
+    Initial hidden state
+  */
+  opacity: 0;
+
+  transform:
+    translateY(45px);
+
+  filter:
+    blur(3px);
+
+  transition:
+    opacity 650ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+/*
+  Visible state
+*/
+.value-row--visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  filter:
+    blur(0);
+}
+
+
+/* =========================================================
+   YELLOW REVEAL LINE
+   ========================================================= */
+
+.value-row::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background:
+    var(--color-yellow);
+
+  transition:
+    width 700ms cubic-bezier(0.2, 0.7, 0.2, 1)
+      150ms;
+}
+
+
+.value-row--visible::before {
+  width: 80px;
+}
+
+
+/* =========================================================
+   LEFT SIDE — NUMBER + VALUE
+   ========================================================= */
+
+.value-row__heading {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.value-row__number {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color:
+    var(--color-yellow);
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+
+.value-row__title {
+  margin: 0;
+
+  color:
+    var(--color-blue-deep);
+
+  font-size:
+    clamp(2rem, 3vw, 3.5rem);
+
+  font-weight: 580;
+
+  line-height: 1;
+
+  letter-spacing:
+    -0.04em;
+
+  transition:
+    color var(--transition-fast);
+}
+
+
+.value-row:hover
+.value-row__title {
+  color:
+    var(--color-blue);
+}
+
+
+/* =========================================================
+   RIGHT SIDE — TEXT
+   ========================================================= */
+
+.value-row__text {
+  max-width: 650px;
+
+  margin: 0;
+
+  color:
+    var(--color-text-soft);
+
+  font-size:
+    clamp(1.15rem, 1.5vw, 1.5rem);
+
+  line-height: 1.6;
+
+  letter-spacing:
+    -0.015em;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .value-row {
+    grid-template-columns: 1fr;
+
+    gap: 1.8rem;
+
+    padding:
+      3rem 0;
+
+    transform:
+      translateY(30px);
+  }
+
+
+  .value-row--visible {
+    transform:
+      translateY(0);
+  }
+
+
+  .value-row__number {
+    margin-bottom: 0.8rem;
+  }
+
+
+  .value-row__title {
+    font-size:
+      clamp(2rem, 10vw, 3rem);
+  }
+
+
+  .value-row__text {
+    max-width: none;
+
+    font-size:
+      1.05rem;
+
+    line-height:
+      1.65;
+  }
+
+
+  .value-row--visible::before {
+    width: 60px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .value-row {
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
+
+    transition: none;
+  }
+
+
+  .value-row::before {
+    width: 80px;
+
+    transition: none;
   }
 }
