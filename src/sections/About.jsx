@@ -118,10 +118,8 @@ function About() {
 
                     <div className="about-block__content">
                         <p>
-                            Vyštudoval som Fakultu elektrotechniky a informatiky
-                            na STU v Bratislave a získal titul Ing. Celú svoju
-                            kariéru pôsobím v oblasti IT (Eurotel, Orange
-                            Slovensko).
+                            Študoval som na Fakulte elektrotechniky a informatiky STU v Bratislave,
+                            kde som získal titul Ing. Celú svoju kariéru pôsobím v oblasti IT (Eurotel, Orange Slovensko).
                         </p>
 
                         <p>

@@ -112,7 +112,7 @@ function Contact() {
                         })
                     }
                 >
-                    Návrat na vrchol ↑
+                    Návrat na začiatok ↑
                 </button>
             </footer>
         </Section>
