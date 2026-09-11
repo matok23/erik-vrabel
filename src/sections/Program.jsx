@@ -5,12 +5,12 @@ const programItems = [
     {
         number: '1.',
         title: 'Kanalizácia a ČOV',
-        text: 'Úspešná realizácia kľúčového projektu kanalizácie s vlastnou čistiarňou odpadových vôd.'
+        text: 'Úspešná realizácia kľúčového projektu kanalizácie s vlastnou čistiarňou odpadových vôd. Projekt je momentálne vo fáze kontroly verejného obstarávania na Envirofonde. Po úspešnom ukončení tejto kontroly môžeme odovzdať stavbu zhotoviteľovi a začať s realizáciou.'
     },
     {
         number: '2.',
         title: 'Bezpečná doprava',
-        text: 'Rekonštrukcia cesty a mosta smerom do Budmeríc, budovanie bezpečných chodníkov v obci.'
+        text: 'Rekonštrukcia cesty a mosta smerom do Budmeríc, budovanie bezpečných chodníkov v obci. Chápem naliehavosť riešenia chodníkov. Aj keď súčasná situácia nie je ideálna, verím, že sa nám podarí prijať konkrétne opatrenia na zvýšenie bezpečnosti chodcov.'
     },
     {
         number: '3.',
@@ -20,27 +20,27 @@ const programItems = [
     {
         number: '4.',
         title: 'Zelená energia a kultúra',
-        text: 'Energetické zhodnotenie budovy kultúrneho domu a kinosály(výmena rozvodov elektroinštalácie a vykurovania, fotovolika).'
+        text: 'Energetické zhodnotenie budovy kultúrneho domu a kinosály (výmena rozvodov elektroinštalácie a vykurovania, fotovolika).'
     },
     {
         number: '5.',
         title: 'Občianska vybavenosť',
-        text: 'Zabezpečenie stabilnej predajne potravín v obci a vybudovanie nových priestorov pre Obecný úrad. Spracovanie štúdie pre využitie obecného pozemku pri škole(nové priestory MŠ, zariadenie sociálnych služieb, …)'
+        text: 'Zabezpečenie stabilnej predajne potravín v obci a vybudovanie nových priestorov pre Obecný úrad. Spracovanie štúdie pre využitie obecného pozemku pri škole (nové priestory MŠ, zariadenie sociálnych služieb, a pod.).'
     },
     {
         number: '6.',
         title: 'Podpora komunít',
-        text: 'Vištuk je  lídrom v regióne v počte kultúrnych a spoločenských podujatí. Aj naďalej budem podporovať spoluprácu obce s miestnymi spolkami a občianskymi združeniami.'
+        text: 'Vištuk je  lídrom v regióne v počte kultúrnych a spoločenských podujatí. Aj naďalej budem podporovať spoluprácu obce s miestnymi spolkami a občianskymi združeniami. Ich prácu a nadšenie si hlboko vážim.'
     },
     {
         number: '7.',
         title: 'Voľný čas',
-        text: 'Rozvoj cyklotrás v spolupráci s BSK a okolitými obcami. Dobudovanie oddychovo relaxačnej zóny pri vyhladkovej veži.'
+        text: 'Rozvoj cyklotrás v spolupráci s BSK a okolitými obcami. Dobudovanie oddychovo relaxačnej zóny pri vyhladkovej veži. Zveľaďovanie existujúcich ihrísk za budovou školy a v areáli bývalej škôlky.'
     },
     {
         number: '8.',
         title: 'Rozvoj cez externé zdroje',
-        text: 'Sme obec s obmedzeným rozpočtom. Dokázali sme však, že rozvoj vieme financovať aj získavaním dotácií z grantov a fondov. V tomto trende budem vytrvalo pokračovať.'
+        text: 'Sme obec s obmedzeným rozpočtom. Dokázali sme však, že rozvoj vieme financovať aj získavaním dotácií z grantov a fondov. V tomto trende budem vytrvalo pokračovať. Verím, že v dohľadnej dobe budeme mať možnosť uchádzať sa aj o finančné prostriedky z eurofondov.'
     },
 ];
 

@@ -15,19 +15,10 @@ function About() {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        /*
-                          Block entered the visible area.
-                        */
                         entry.target.classList.add(
                             'about-block--visible',
                         );
                     } else {
-                        /*
-                          Block left the visible area.
-            
-                          Remove the class so it can animate
-                          again the next time it enters.
-                        */
                         entry.target.classList.remove(
                             'about-block--visible',
                         );
@@ -35,16 +26,7 @@ function About() {
                 });
             },
             {
-                /*
-                  About 15% of the block needs to be visible
-                  before it activates.
-                */
                 threshold: 0.15,
-
-                /*
-                  Moves the activation zone slightly inward
-                  from the bottom of the screen.
-                */
                 rootMargin: '0px 0px -8% 0px',
             },
         );
@@ -86,9 +68,36 @@ function About() {
 
                     <div className="about-block__content">
                         <p>
-                            Vo Vištuku som sa narodil a prežil som tu väčšinu svojho života.
-                            Mám 51 rokov, som 24 rokov ženatý a s manželkou Zuzanou vychovávame dve dcéry, Alexandru (23) a Sofiu (14).
+                            Vo Vištuku som sa narodil a prežil som tu väčšinu
+                            svojho života. Mám 51 rokov, už 24 rokov som ženatý
+                            a spolu s manželkou Zuzanou vychovávame dve dcéry,
+                            Alexandru (23) a Sofiu (14).
                         </p>
+
+                        <p>
+                            Voľný čas rád trávim so svojou rodinou a priateľmi.
+                            Blízka mi je príroda - či už pri bicyklovaní, peších
+                            výletoch alebo pri cestovaní, počas ktorého rád
+                            spoznávam nové miesta a načerpávam inšpiráciu.
+                        </p>
+
+                        <p>
+                            Najväčším relaxom je pre mňa hra na akustickú gitaru.
+                            Je to chvíľa, keď môžem spomaliť, vypnúť od
+                            každodenných povinností a načerpať novú energiu.
+                        </p>
+
+                        <div className="about-photo">
+                            <img
+                                src="/gitara.jpeg"
+                                alt="Hra na akustickú gitaru"
+                            />
+
+                            <span
+                                className="about-photo__accent"
+                                aria-hidden="true"
+                            />
+                        </div>
                     </div>
                 </article>
 
@@ -109,13 +118,16 @@ function About() {
 
                     <div className="about-block__content">
                         <p>
-                            Vyštudoval som Fakultu elektrotechniky a informatiky na STU v Bratislave a získal titul Ing.
-                            Celú svoju kariéru pôsobím v oblasti IT (Eurotel, Orange Slovensko).
+                            Vyštudoval som Fakultu elektrotechniky a informatiky
+                            na STU v Bratislave a získal titul Ing. Celú svoju
+                            kariéru pôsobím v oblasti IT (Eurotel, Orange
+                            Slovensko).
                         </p>
 
                         <p>
-                            Momentálne pracujem ako projektový manažér v medzinárodnej spoločnosti Orange Business.
-                            Riadenie komplexných projektov je mojou každodennou prácou.
+                            Momentálne pracujem ako projektový manažér v
+                            medzinárodnej spoločnosti Orange Business. Riadenie
+                            komplexných projektov je mojou každodennou prácou.
                         </p>
                     </div>
                 </article>
@@ -137,18 +149,27 @@ function About() {
 
                     <div className="about-block__content">
                         <p>
-                            Vištuk je môj domov. Našiel som tu priateľov, založil rodinu a prežil tie najkrajšie chvíle.
-                            Dostal som sa do životného obdobia, kedy chcem svoje sily, energiu a manažérske skúsenosti naplno odovzdať našej obci.
+                            Vištuk je môj domov. Našiel som tu priateľov, založil
+                            si rodinu a prežil tie najkrajšie chvíle. Dostal som
+                            sa do životného obdobia, kedy chcem svoje sily,
+                            energiu a manažérske skúsenosti naplno odovzdať
+                            našej obci.
                         </p>
 
                         <p>
-                            Posledné 4 roky pôsobím ako poslanec obecného zastupiteľstva a zástupca pani starostky. Viem, čo vedenie obce obnáša.
-                            Za toto obdobie sme odviedli kus poctivej práce a rozbehli mnohé dôležité projekty. Chcem ich úspešne dokončiť a posunúť Vištuk vpred.
+                            Posledné 4 roky pôsobím ako poslanec obecného
+                            zastupiteľstva a zástupca pani starostky. Viem, čo
+                            vedenie obce obnáša. Za toto obdobie sme odviedli kus
+                            poctivej práce a rozbehli mnohé dôležité projekty.
+                            Chcem ich úspešne dokončiť a posunúť Vištuk vpred.
                         </p>
 
                         <p>
-                            Spoluprácou so súčasnou pani starostkou zabezpečím kontinuitu riadenia obce bez zbytočných prieťahov.
-                            Som presvedčený, že Vištuk má vďaka svojej histórii a polohe veľký potenciál byť moderným a bezpečným miestom pre spokojný život jeho obyvateľov.
+                            Spoluprácou so súčasnou pani starostkou zabezpečím
+                            kontinuitu riadenia obce bez zbytočných prieťahov.
+                            Som presvedčený, že vďaka svojej histórii a polohe
+                            má Vištuk veľký potenciál stať sa moderným, bezpečným
+                            a príjemným miestom pre život jeho obyvateľov.
                         </p>
                     </div>
                 </article>

@@ -11,7 +11,7 @@ function Contact() {
             <div className="contact-layout">
                 <div className="contact-info">
                     <p className="lead">
-                        Neváhajte a kontaktujte ma, rád zodpoviem Vaše otázky
+                        Neváhajte a kontaktujte ma. Na Vaše otázky rád odpoviem.
                     </p>
 
                     <div className="contact-list">
@@ -50,12 +50,12 @@ function Contact() {
                             </span>
 
                             <a
-                                href="https://example.com"
+                                href="https://erikvrabel.sk"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="contact-item__value"
                             >
-                                neviem este
+                                www.erikvrabel.sk
                             </a>
                         </div>
 
@@ -67,9 +67,14 @@ function Contact() {
                     <div className="flyer-preview__header">
                         <span>Volebný leták</span>
 
-                        <span className="flyer-preview__open">
+                        <a
+                            href="/letak.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flyer-preview__open"
+                        >
                             Prezerať leták ↗
-                        </span>
+                        </a>
                     </div>
 
                     <div className="flyer-preview__document">
