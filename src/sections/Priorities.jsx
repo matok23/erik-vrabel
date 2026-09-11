@@ -15,12 +15,12 @@ const values = [
     {
         number: '3.',
         title: 'Trpezlivosť',
-        text: 'Aj vo vypätých situáciách sa snažím zachovať pokoj a nadhľad. Nezhody považujem za prirodzenú súčasť spolupráce a riešim ich vecne a s konštruktívne.',
+        text: 'Aj vo vypätých situáciách sa snažím zachovať pokoj a nadhľad. Nezhody považujem za prirodzenú súčasť spolupráce a riešim ich vecne a konštruktívne.',
     },
     {
         number: '4.',
         title: 'Vytrvalosť',
-        text: 'Robím maximum preto, aby som rozpracované projekty úspešne dokončil. Som pripravený vytrvať, aj vtedy, keď cesta k dosiahnutiu výsledku nie je jednoduchá.',
+        text: 'Robím maximum preto, aby som rozpracované projekty úspešne dokončil. Som pripravený vytrvať aj vtedy, keď cesta k dosiahnutiu výsledku nie je jednoduchá.',
     },
     {
         number: '5.',

@@ -35,7 +35,7 @@ const programItems = [
     {
         number: '7.',
         title: 'Voľný čas',
-        text: 'Rozvoj cyklotrás v spolupráci s BSK a okolitými obcami. Dobudovanie oddychovo relaxačnej zóny pri vyhladkovej veži. Zveľaďovanie existujúcich ihrísk za budovou školy a v areáli bývalej škôlky.'
+        text: 'Rozvoj cyklotrás v spolupráci s BSK a okolitými obcami. Dobudovanie oddychovo relaxačnej zóny pri vyhliadkovej veži. Zveľaďovanie existujúcich ihrísk za budovou školy a v areáli bývalej škôlky.'
     },
     {
         number: '8.',
