@@ -20,7 +20,7 @@ const programItems = [
     {
         number: '4.',
         title: 'Zelená energia a kultúra',
-        text: 'Energetické zhodnotenie budovy kultúrneho domu a kinosály (výmena rozvodov elektroinštalácie a vykurovania, fotovolika).'
+        text: 'Energetické zhodnotenie budovy kultúrneho domu a kinosály (výmena rozvodov elektroinštalácie a vykurovania, fotovoltika).'
     },
     {
         number: '5.',
