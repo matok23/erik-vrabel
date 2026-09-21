@@ -617,6 +617,51 @@ h3 {
 }
 
 /* =========================================================
+   ABOUT INTRO
+   ========================================================= */
+
+.about-intro {
+  max-width: 760px;
+
+  margin-bottom:
+    clamp(3rem, 6vw, 5rem);
+}
+
+
+.about-intro p {
+  margin: 0;
+
+  color:
+    var(--color-text);
+
+  font-size:
+    clamp(1.35rem, 2vw, 2rem);
+
+  font-weight: 420;
+
+  line-height: 1.45;
+
+  letter-spacing:
+    -0.025em;
+}
+
+
+@media (max-width: 700px) {
+
+  .about-intro {
+    margin-bottom: 3rem;
+  }
+
+
+  .about-intro p {
+    font-size:
+      clamp(1.2rem, 6vw, 1.6rem);
+
+    line-height: 1.5;
+  }
+}
+
+/* =========================================================
    ABOUT PHOTO
    ========================================================= */
 

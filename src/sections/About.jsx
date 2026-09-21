@@ -50,6 +50,16 @@ function About() {
             eyebrow="01"
             title="O mne"
         >
+            <div className="about-intro">
+                <p>
+                    Vážení spoluobčania, milí Vištučania,
+                    rozhodol som sa kandidovať na post starostu našej obce.
+                    Touto cestou vám chcem predstaviť svoju osobnú motiváciu,
+                    ciele a víziu, ktorú chcem počas nadchádzajúceho obdobia pre našu obec zrealizovať.
+                    Budem úprimne vďačný za vašu dôveru a podporu v blížiacich sa komunálnych voľbách.
+                </p>
+            </div>
+
             <div className="about-sections">
 
                 <article
@@ -118,14 +128,17 @@ function About() {
 
                     <div className="about-block__content">
                         <p>
-                            Študoval som na Fakulte elektrotechniky a informatiky STU v Bratislave,
-                            kde som získal titul Ing. Celú svoju kariéru pôsobím v oblasti IT (Eurotel, Orange Slovensko).
+                            Študoval som na Fakulte elektrotechniky a informatiky
+                            STU v Bratislave, kde som získal titul Ing. Celú
+                            svoju kariéru pôsobím v oblasti IT
+                            (Eurotel, Orange Slovensko).
                         </p>
 
                         <p>
                             Momentálne pracujem ako projektový manažér v
-                            medzinárodnej spoločnosti Orange Business. Riadenie
-                            komplexných projektov je mojou každodennou prácou.
+                            medzinárodnej spoločnosti Orange Business.
+                            Riadenie komplexných projektov je mojou
+                            každodennou prácou.
                         </p>
                     </div>
                 </article>
@@ -147,27 +160,29 @@ function About() {
 
                     <div className="about-block__content">
                         <p>
-                            Vištuk je môj domov. Našiel som tu priateľov, založil
-                            si rodinu a prežil tie najkrajšie chvíle. Dostal som
-                            sa do životného obdobia, kedy chcem svoje sily,
-                            energiu a manažérske skúsenosti naplno odovzdať
-                            našej obci.
+                            Vištuk je môj domov. Našiel som tu priateľov,
+                            založil si rodinu a prežil tie najkrajšie chvíle.
+                            Dostal som sa do životného obdobia, kedy chcem
+                            svoje sily, energiu a manažérske skúsenosti
+                            naplno odovzdať našej obci.
                         </p>
 
                         <p>
                             Posledné 4 roky pôsobím ako poslanec obecného
-                            zastupiteľstva a zástupca pani starostky. Viem, čo
-                            vedenie obce obnáša. Za toto obdobie sme odviedli kus
-                            poctivej práce a rozbehli mnohé dôležité projekty.
-                            Chcem ich úspešne dokončiť a posunúť Vištuk vpred.
+                            zastupiteľstva a zástupca pani starostky.
+                            Viem, čo vedenie obce obnáša. Za toto obdobie
+                            sme odviedli kus poctivej práce a rozbehli mnohé
+                            dôležité projekty. Chcem ich úspešne dokončiť
+                            a posunúť Vištuk vpred.
                         </p>
 
                         <p>
                             Spoluprácou so súčasnou pani starostkou zabezpečím
                             kontinuitu riadenia obce bez zbytočných prieťahov.
                             Som presvedčený, že vďaka svojej histórii a polohe
-                            má Vištuk veľký potenciál stať sa moderným, bezpečným
-                            a príjemným miestom pre život jeho obyvateľov.
+                            má Vištuk veľký potenciál stať sa moderným,
+                            bezpečným a príjemným miestom pre život jeho
+                            obyvateľov.
                         </p>
                     </div>
                 </article>
